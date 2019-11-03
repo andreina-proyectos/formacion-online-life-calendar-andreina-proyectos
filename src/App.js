@@ -18,12 +18,23 @@ class App extends React.Component {
           <section className="section__user-editor">
             <Calendar />
 
-            <form>
-              <p className="user-editor__text">Elige tu estado</p>
-              <label for="happy">Happy</label>
-              <input id="happy" type="radio" name="status" value="happy"/>
-              <label for="sad">Sad</label>
-              <input id="sad" type="radio" name="status" value="sad"/>
+            <form id="form" className="user-editor__form">
+              <div className="user-editor__radio">
+                <p className="user-editor__text">Elige tu estado</p>
+                <label for="happy">Happy</label>
+                <input id="happy" type="radio" name="status" value="happy"/>
+                <label for="sad">Sad</label>
+                <input id="sad" type="radio" name="status" value="sad"/>
+              </div>
+              <div className="user-editor__textarea">
+                <p className="user-editor__text">Escribe por qué tu día fue tan bueno</p>
+                <textarea rows="4" cols="50">
+                </textarea>
+              </div>
+              <div className="user-editor__buttons">
+                <button type="submit" form="form1" value="Submit">Guardar</button>
+                <button type="submit" form="form1" value="Submit">Cancelar</button>
+              </div>
             </form>
 
           </section>
