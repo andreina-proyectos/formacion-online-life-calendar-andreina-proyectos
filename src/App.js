@@ -16,7 +16,16 @@ class App extends React.Component {
         </header>
         <main className="app__main-wrapper">
           <section className="section__user-editor">
-          <Calendar />
+            <Calendar />
+
+            <form>
+              <p className="user-editor__text">Elige tu estado</p>
+              <label for="happy">Happy</label>
+              <input id="happy" type="radio" name="status" value="happy"/>
+              <label for="sad">Sad</label>
+              <input id="sad" type="radio" name="status" value="sad"/>
+            </form>
+
           </section>
           <section className="section__user-days"></section>
         </main>
