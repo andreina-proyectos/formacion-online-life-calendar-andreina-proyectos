@@ -39,7 +39,19 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 
 ## Proceso
 
-- App tiene dos componentes hijos: UserDaysEditor y UserDaysHistory.
-- He decidido introducir un calendario de la librería React-calendar
-- Cuando el usuario elija una fecha, ésta se recoge y se guarda en un input, donde el usuario podrá ver la fecha en formato sencillo. Para asegurarme que el usuario la ha introducido, le añado al input el atributo isRequire.
+1. App tiene dos componentes hijos: UserDaysEditor y UserDaysHistory.
+2. He decidido introducir un calendario de la librería React-calendar
+3. Cuando el usuario elija una fecha, ésta se recoge y se guarda en un input, donde el usuario podrá ver la fecha en formato sencillo. Para asegurarme que el usuario la ha introducido, le añado al input el atributo isRequire.
+4. Una vez que el usuario haya elegido la fecha, debo guardar en el estado del componente App un objeto que contenga la información que el usuario haya introducido.
+  Estructura de la informacion:
+  - Date: la fecha elegida por el usuario
+  - Status: el estado de ánimo elegido
+  - Message: el mensaje que haya introducido
+Entonces, tendremos un array de objetos en el state, el objeto tendrá esta forma:
+
+``` {
+  date: ,
+  status: .
+  message: 
+}```
 

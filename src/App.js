@@ -3,18 +3,38 @@ import './App.css';
 import Calendar from 'react-calendar'
 
 class App extends React.Component {
-  // constructor(props) {
-  //   super(props);
-  // }
-
-  handleChangeCalendar = (date) => {
-    const selectedDate = document.querySelector("#selected-date");
-    selectedDate.value = date.toLocaleDateString();
-    console.log(typeof date);
-    console.log(date);
+  constructor(props) {
+    super(props);
+    this.state = {
+      userData: []
+    }
   }
 
-  onChange = date => this.setState({ date })
+  handleChangeCalendar = (date) => {
+    const inputUserDate = document.querySelector("#inputUserDate");
+    inputUserDate.value = date.toLocaleDateString();
+  }
+
+  handleGetUserData = () => {
+    const inputUserDate = document.querySelector("#inputUserDate");
+    const selectedDate = inputUserDate.value;
+    const sadRadio = document.getElementById("sad");
+    const happyRadio = document.getElementById("happy");
+    const textArea = document.getElementById("text-area");
+    const textAreaValue = textArea.value;
+    console.log(textAreaValue);
+    let checkedRadio;
+    if(sadRadio.checked) {
+      checkedRadio = sadRadio.value
+    }
+    else {
+      checkedRadio = happyRadio.value
+    }
+    console.log(checkedRadio);
+   
+  }
+
+
 
   render() {
     return (
@@ -29,7 +49,7 @@ class App extends React.Component {
             <Calendar 
               onChange={this.handleChangeCalendar}
             />
-            <input required id="selected-date" type="text" name="selected-date"/>
+            <input required id="inputUserDate" type="text" name="selected-date"/>
               <div className="user-editor__radio">
                 <p className="user-editor__text">Elige tu estado</p>
                 <label htmlFor="happy">Happy</label>
@@ -39,11 +59,11 @@ class App extends React.Component {
               </div>
               <div className="user-editor__textarea">
                 <p className="user-editor__text">Escribe por qué tu día fue tan bueno</p>
-                <textarea rows="4" cols="50">
+                <textarea id="text-area" rows="4" cols="50">
                 </textarea>
               </div>
               <div className="user-editor__buttons">
-                <button type="submit" form="form1" value="Submit">Guardar</button>
+                <button onClick={this.handleGetUserData} type="submit" form="form1" value="Submit">Guardar</button>
                 <button type="submit" form="form1" value="Submit">Cancelar</button>
               </div>
             </form>
