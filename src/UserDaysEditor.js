@@ -31,6 +31,7 @@ class UserDaysEditor extends React.Component {
     };
     console.log('soy el objeto', userData);
     this.props.saveUserDay(userData);
+    window.location.hash = "#/";
   }
 
   render() {
