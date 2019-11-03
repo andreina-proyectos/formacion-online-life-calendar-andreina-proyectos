@@ -12,6 +12,14 @@ class App extends React.Component {
     }
   }
 
+  componentDidMount() {
+    const lsUserDays = localStorage.getItem('userDaysData');
+    if(lsUserDays) {
+     const lsUserDaysInfo = JSON.parse(lsUserDays);
+     this.setState({userData:lsUserDaysInfo});
+    }
+  }
+
   saveUserDay = (userDataObject) => {
     const userDayDataArray = this.state.userData;
     userDayDataArray.push(
@@ -19,7 +27,8 @@ class App extends React.Component {
     )
     this.setState({
       userData: userDayDataArray
-    })
+    });
+    localStorage.setItem('userDaysData', JSON.stringify(userDayDataArray));
   }
 
   render() {
@@ -37,7 +46,13 @@ class App extends React.Component {
               <section className="section__user-days-history">
                 <Link className="history__button-go-editor" to="/user-editor">+</Link>
                   <ul className="history__list">
-                  {this.state.userData.map(
+                  {this.state.userData
+                    .sort((obj1, obj2) => {
+                      const dateObject1FormatedMiliSeconds = new Date(obj1.date.split('/').reverse().join('/')).getTime();
+                      const dateObject2FormatedMiliSeconds = new Date(obj2.date.split('/').reverse().join('/')).getTime();
+                      return dateObject1FormatedMiliSeconds - dateObject2FormatedMiliSeconds;
+                    })
+                    .map(
                     objectData => {
                       return(
                         <UserDaysHistory
