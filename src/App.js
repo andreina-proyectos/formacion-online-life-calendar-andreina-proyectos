@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import UserDaysEditor from './UserDaysEditor';
+import UserDaysHistory from './UserDaysHistory';
 
 class App extends React.Component {
   constructor(props) {
@@ -36,17 +37,9 @@ class App extends React.Component {
              {this.state.userData.map(
                objectData => {
                  return(
-                   <li className="history__list__day">
-                    {objectData.status === "happy"? 
-                      <p className="happy-face face">
-                        {":)"}
-                      </p>
-                      :
-                      <p className="sad-face face">
-                      {":("}
-                    </p>
-                  }
-                   </li>
+                  <UserDaysHistory
+                    objectData = {objectData}
+                  />
                  )
                }
               )}
