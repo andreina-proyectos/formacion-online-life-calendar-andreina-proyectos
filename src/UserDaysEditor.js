@@ -1,5 +1,6 @@
 import React from 'react';
-import Calendar from 'react-calendar'
+import Calendar from 'react-calendar';
+import { Link } from 'react-router-dom';
 
 class UserDaysEditor extends React.Component {
   handleChangeCalendar = (date) => {
@@ -55,7 +56,9 @@ class UserDaysEditor extends React.Component {
               </div>
               <div className="user-editor__buttons">
                 <button onClick={this.handleGetUserData} type="submit" form="form1" value="Submit">Guardar</button>
-                <button type="submit" form="form1" value="Submit">Cancelar</button>
+                <Link className="editor__button-go-history" to="/">
+                  <button type="submit" form="form1" value="Submit">Cancelar</button>
+                </Link>
               </div>
             </form>
           </section>
