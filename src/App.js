@@ -7,6 +7,15 @@ class App extends React.Component {
   //   super(props);
   // }
 
+  handleChangeCalendar = (date) => {
+    const selectedDate = document.querySelector("#selected-date");
+    selectedDate.value = date.toLocaleDateString();
+    console.log(typeof date);
+    console.log(date);
+  }
+
+  onChange = date => this.setState({ date })
+
   render() {
     return (
       <div className="App">
@@ -16,15 +25,17 @@ class App extends React.Component {
         </header>
         <main className="app__main-wrapper">
           <section className="section__user-editor">
-            <Calendar />
-
             <form id="form" className="user-editor__form">
+            <Calendar 
+              onChange={this.handleChangeCalendar}
+            />
+            <input required id="selected-date" type="text" name="selected-date"/>
               <div className="user-editor__radio">
                 <p className="user-editor__text">Elige tu estado</p>
-                <label for="happy">Happy</label>
-                <input id="happy" type="radio" name="status" value="happy"/>
-                <label for="sad">Sad</label>
-                <input id="sad" type="radio" name="status" value="sad"/>
+                <label htmlFor="happy">Happy</label>
+                <input required id="happy" type="radio" name="status" value="happy"/>
+                <label htmlFor="sad">Sad</label>
+                <input required id="sad" type="radio" name="status" value="sad"/>
               </div>
               <div className="user-editor__textarea">
                 <p className="user-editor__text">Escribe por qué tu día fue tan bueno</p>
