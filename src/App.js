@@ -31,10 +31,20 @@ class App extends React.Component {
       checkedRadio = happyRadio.value
     }
     console.log(checkedRadio);
-   
+    const userData = {
+      date: selectedDate,
+      status: checkedRadio,
+      message: textAreaValue,
+    };
+    console.log('soy el objeto', userData);
+    const userDayDataArray = this.state.userData;
+    userDayDataArray.push(
+      userData
+    )
+    this.setState({
+      userData: userDayDataArray
+    })
   }
-
-
 
   render() {
     return (

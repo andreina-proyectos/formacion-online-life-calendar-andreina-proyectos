@@ -51,7 +51,7 @@ Entonces, tendremos un array de objetos en el state, el objeto tendrá esta form
 
 ``` {
   date: ,
-  status: .
-  message: 
+  status: ,
+  message: ,
 }```
 
