@@ -15,3 +15,14 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
+
+
+
+
+.history__list__day {
+  display: inline;
+}
+
+.face {
+  display: inline;
+}

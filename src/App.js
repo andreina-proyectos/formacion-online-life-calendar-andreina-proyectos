@@ -31,7 +31,27 @@ class App extends React.Component {
           <UserDaysEditor
             saveUserDay = {this.saveUserDay}
           />
-          <section className="section__user-days-history"></section>
+          <section className="section__user-days-history">
+            <ul className="history__list">
+             {this.state.userData.map(
+               objectData => {
+                 return(
+                   <li className="history__list__day">
+                    {objectData.status === "happy"? 
+                      <p className="happy-face face">
+                        {":)"}
+                      </p>
+                      :
+                      <p className="sad-face face">
+                      {":("}
+                    </p>
+                  }
+                   </li>
+                 )
+               }
+              )}
+            </ul>
+          </section>
         </main>
       </div>
     );
