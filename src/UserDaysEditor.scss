@@ -1,0 +1,21 @@
+.section__user-editor {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items:center;
+}
+
+.react-calendar {
+  margin:20px;
+}
+
+#inputUserDate {
+  border: 1px solid rgba(128, 128, 128, 0.466);
+  height: 20px;
+  text-align: center;
+  ::placeholder{
+    color:rgba(128, 128, 128, 0.555);
+    text-align: center;
+  }
+}
+

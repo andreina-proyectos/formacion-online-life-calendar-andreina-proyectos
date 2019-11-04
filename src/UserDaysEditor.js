@@ -1,5 +1,6 @@
 import React from 'react';
 import Calendar from 'react-calendar';
+import './UserDaysEditor.scss';
 import { Link } from 'react-router-dom';
 
 class UserDaysEditor extends React.Component {
@@ -42,7 +43,7 @@ class UserDaysEditor extends React.Component {
             <Calendar 
               onChange={this.handleChangeCalendar}
             />
-            <input required id="inputUserDate" type="text" name="selected-date"/>
+            <input placeholder="date" required id="inputUserDate" type="text" name="selected-date"/>
               <div className="user-editor__radio">
                 <p className="user-editor__text">Elige tu estado</p>
                 <label htmlFor="happy">Happy</label>
