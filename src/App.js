@@ -36,7 +36,7 @@ class App extends React.Component {
       <div className="App">
         <header className="App-header">
           <h1 className="header__title">Life Calendar</h1>
-          <h2 className="header__subtitle">Elige la fecha y un smiley para añadir tu estado de ánimo</h2>
+          <h4 className="header__subtitle">Elige una fecha y un emoji para añadir tu estado de ánimo</h4>
         </header>
 
         <main className="app__main-wrapper">

@@ -1,13 +1,12 @@
 .App {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
+  background:linear-gradient(to right top, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);
+  background-size: 200% 200%;
+  animation: gradientBG 3s ease infinite;
+  min-height: 100vh;
 }
 
 .App-header {
-  background-color: #282c34;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -16,9 +15,42 @@
   color: white;
 }
 
+.header__title {
+  margin-top:5;
+}
 
+.section__user-days-history {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
+.history__button-go-editor {
+  text-decoration: none;
+  font-size: 40px;
+  color: white;
+  background-color: rgb(23, 141, 209);
+  border:1px solid rgb(48, 47, 53);
+  display: flex;
+  width:200px;
+  justify-content: center;
+  border-radius: 5px;
+}
 
 .history__list__day {
   display: inline;
+}
+
+
+@keyframes gradientBG {
+0% {
+  background-position: 0% 50%;
+}
+50% {
+  background-position: 100% 50%;
+}
+100% {
+  background-position: 0% 50%;
+}
 }

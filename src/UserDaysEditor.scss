@@ -6,16 +6,45 @@
 }
 
 .react-calendar {
-  margin:20px;
+  border-radius: 10px;
+  margin-bottom: 5px;
 }
 
 #inputUserDate {
   border: 1px solid rgba(128, 128, 128, 0.466);
-  height: 20px;
+  height: 30px;
+  margin:5px;
   text-align: center;
+  border-radius: 5px;
+  color: rgb(81, 94, 104);
+  font-weight: 500;
   ::placeholder{
-    color:rgba(128, 128, 128, 0.555);
+    color:rgba(4, 52, 114, 0.555);
     text-align: center;
   }
 }
 
+.user-editor__radio {
+  padding:10px;
+  font-size: 20px;
+}
+
+.radio-input {
+  margin:10px;
+}
+
+.user-editor__text {
+  color:white;
+}
+
+.editor__button {
+  margin:5px;
+  padding: 5px;
+  border-radius: 10px;
+  border:1px solid rgb(81, 86, 92);
+}
+
+.textarea {
+  border-radius: 10px;
+  border:1px solid rgb(81, 86, 92);
+}

@@ -45,21 +45,21 @@ class UserDaysEditor extends React.Component {
             />
             <input placeholder="date" required id="inputUserDate" type="text" name="selected-date"/>
               <div className="user-editor__radio">
-                <p className="user-editor__text">Elige tu estado</p>
-                <label htmlFor="happy">Happy</label>
-                <input required id="happy" type="radio" name="status" value="happy"/>
-                <label htmlFor="sad">Sad</label>
-                <input required id="sad" type="radio" name="status" value="sad"/>
+                <h3 className="user-editor__text">Elige tu estado</h3>
+                <label htmlFor="happy"><span role="img" aria-label="happy">😊</span></label>
+                <input className="radio-input" required id="happy" type="radio" name="status" value="happy"/>
+                <label htmlFor="sad"><span role="img" aria-label="sad">😔</span></label>
+                <input className="radio-input" required id="sad" type="radio" name="status" value="sad"/>
               </div>
               <div className="user-editor__textarea">
-                <p className="user-editor__text">Escribe por qué tu día fue tan bueno</p>
-                <textarea id="text-area" rows="4" cols="50">
+                <h3 className="user-editor__text">Escribe por qué tu día fue tan bueno</h3>
+                <textarea className="textarea"  id="text-area" rows="4" cols="50">
                 </textarea>
               </div>
               <div className="user-editor__buttons">
-                <button onClick={this.handleGetUserData} type="submit" form="form1" value="Submit">Guardar</button>
+                <button className="editor__button" onClick={this.handleGetUserData} type="submit" form="form1" value="Submit">Guardar</button>
                 <Link className="editor__button-go-history" to="/">
-                  <button type="submit" form="form1" value="Submit">Cancelar</button>
+                  <button className="editor__button" type="submit" form="form1" value="Submit">Cancelar</button>
                 </Link>
               </div>
             </form>
