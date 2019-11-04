@@ -4,7 +4,7 @@ import './UserDaysHistory.scss';
 class UserDaysHistory extends React.Component {
   render() {
     return(
-      <li className="history__list__day">
+      <li className="history__list__day tooltip">
         {this.props.objectData.status === "happy"? 
           <p className="happy-face face">
             &#128522;
@@ -14,6 +14,8 @@ class UserDaysHistory extends React.Component {
             &#128532;
           </p>
       }
+
+        <span className="tooltiptext">{this.props.objectData.date}</span>
       </li>
     )
   }

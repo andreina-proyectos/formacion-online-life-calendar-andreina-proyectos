@@ -39,8 +39,15 @@
   border-radius: 5px;
 }
 
+.section__user-days-history {
+  height: 100%;
+}
+
 .history__list__day {
   display: inline;
+  box-sizing: content-box;
+  margin:0px;
+  padding:0px;
 }
 
 
