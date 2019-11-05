@@ -9,7 +9,7 @@ class UserDaysEditor extends React.Component {
     inputUserDate.value = date.toLocaleDateString();
   }
 
-  handleGetUserData = () => {
+  handleGetUserData = (event) => {
     const inputUserDate = document.querySelector("#inputUserDate");
     const selectedDate = inputUserDate.value;
     const sadRadio = document.getElementById("sad");
@@ -18,21 +18,28 @@ class UserDaysEditor extends React.Component {
     const textAreaValue = textArea.value;
     console.log(textAreaValue);
     let checkedRadio;
-    if(sadRadio.checked) {
-      checkedRadio = sadRadio.value;
+    if(!inputUserDate.value) {
+      event.preventDefault();
+      alert('Lo siento! debes introducir una fecha 😇');
     }
     else {
-      checkedRadio = happyRadio.value
+      if(sadRadio.checked && inputUserDate.value) {
+        checkedRadio = sadRadio.value;
+      }
+      else {
+        checkedRadio = happyRadio.value
+      }
+      console.log(checkedRadio);
+      const userData = {
+        date: selectedDate,
+        status: checkedRadio,
+        message: textAreaValue,
+      };
+      console.log('soy el objeto', userData);
+      this.props.saveUserDay(userData);
+      window.location.hash = "#/";
+
     }
-    console.log(checkedRadio);
-    const userData = {
-      date: selectedDate,
-      status: checkedRadio,
-      message: textAreaValue,
-    };
-    console.log('soy el objeto', userData);
-    this.props.saveUserDay(userData);
-    window.location.hash = "#/";
   }
 
   handleClickSad = (event) => {
