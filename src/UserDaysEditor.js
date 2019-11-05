@@ -19,7 +19,7 @@ class UserDaysEditor extends React.Component {
     console.log(textAreaValue);
     let checkedRadio;
     if(sadRadio.checked) {
-      checkedRadio = sadRadio.value
+      checkedRadio = sadRadio.value;
     }
     else {
       checkedRadio = happyRadio.value
@@ -33,6 +33,11 @@ class UserDaysEditor extends React.Component {
     console.log('soy el objeto', userData);
     this.props.saveUserDay(userData);
     window.location.hash = "#/";
+  }
+
+  handleClickSad = (event) => {
+    const textAreaElement = document.querySelector('.textarea');
+    textAreaElement.setAttribute("disabled", true);
   }
 
   render() {
@@ -49,7 +54,7 @@ class UserDaysEditor extends React.Component {
                 <label htmlFor="happy"><span role="img" aria-label="happy">😊</span></label>
                 <input className="radio-input" required id="happy" type="radio" name="status" value="happy"/>
                 <label htmlFor="sad"><span role="img" aria-label="sad">😔</span></label>
-                <input className="radio-input" required id="sad" type="radio" name="status" value="sad"/>
+                <input onClick={this.handleClickSad} className="radio-input" required id="sad" type="radio" name="status" value="sad"/>
               </div>
               <div className="user-editor__textarea">
                 <h3 className="user-editor__text">Escribe por qué tu día fue tan bueno</h3>

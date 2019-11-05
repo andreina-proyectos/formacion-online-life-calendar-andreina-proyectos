@@ -14,7 +14,6 @@ class UserDaysHistory extends React.Component {
             <span role="img" aria-label="sad-face">&#128532;</span>
           </p>
       }
-
         <span className="tooltiptext">{this.props.objectData.date}</span>
       </li>
     )
