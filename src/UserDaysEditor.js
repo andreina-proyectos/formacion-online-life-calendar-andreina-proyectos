@@ -16,7 +16,6 @@ class UserDaysEditor extends React.Component {
     const happyRadio = document.getElementById("happy");
     const textArea = document.getElementById("text-area");
     const textAreaValue = textArea.value;
-    console.log(textAreaValue);
     let checkedRadio;
     if(!inputUserDate.value) {
       event.preventDefault();
@@ -29,13 +28,11 @@ class UserDaysEditor extends React.Component {
       else {
         checkedRadio = happyRadio.value
       }
-      console.log(checkedRadio);
       const userData = {
         date: selectedDate,
         status: checkedRadio,
         message: textAreaValue,
       };
-      console.log('soy el objeto', userData);
       this.props.saveUserDay(userData);
       window.location.hash = "#/";
 
